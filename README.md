@@ -80,12 +80,6 @@ the binary is copied to. Uninstall with:
 sudo rm /usr/local/bin/heif-convert
 ```
 
-### Docker image
-
-```bash
-docker build -t heif-convert .
-```
-
 ## Usage
 
 heif-convert can be used from the command line by invoking the `heif-convert`
@@ -101,14 +95,6 @@ Convert all HEIF images in the current folder to JPG images:
 
 ```bash
 heif-convert *.heic
-```
-
-### Docker image
-
-Convert an HEIF image to JPG using the Docker image:
-
-```bash
-docker run -v "$(pwd)":/usr/app/out --rm heif-convert input.heic
 ```
 
 ## Arguments
