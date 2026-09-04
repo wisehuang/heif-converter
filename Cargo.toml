@@ -1,0 +1,29 @@
+[package]
+name = "heif-convert"
+version = "1.2.1"
+edition = "2021"
+rust-version = "1.74"
+license = "MIT"
+description = "Multi-Platform command line tool written in Rust to convert HEIF images"
+repository = "https://github.com/NeverMendel/heif-convert"
+keywords = ["heif", "heic", "heif-convert", "heic-convert"]
+categories = ["command-line-utilities", "multimedia::images"]
+
+[[bin]]
+name = "heif-convert"
+path = "src/main.rs"
+
+[dependencies]
+anyhow = "1.0"
+chrono = { version = "0.4", default-features = false, features = ["clock", "std"] }
+clap = { version = "4.5", features = ["derive"] }
+glob = "0.3"
+ico = "0.4"
+image = { version = "0.25", default-features = false, features = ["jpeg", "png", "webp", "gif", "tiff", "bmp", "ico"] }
+img-parts = "0.3"
+libheif-rs = { version = "=1.0.2", default-features = false }
+log = { version = "0.4", features = ["std"] }
+
+[profile.release]
+strip = true
+lto = true
